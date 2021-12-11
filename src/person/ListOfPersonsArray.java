@@ -26,6 +26,23 @@ public class ListOfPersonsArray {
 				a[i] = aPerson[i];
 			aPerson = a;
 		} 
+		aPerson[size] = x;
+		size++;
+		}
+	
+	//remove the person in position y
+	public void remove(int y) {
+		if (y >= 0 && y < size) {
+			//have to move all elements that follow k
+			for (int i = y; i < size; i++)
+				aPerson[i] = aPerson[i+1];
+			size--;
+		}
+		if (aPerson.length >10 && size < aPerson.length/4) {
+			Person[] a = new Person[aPerson.length/2];
+			for(int i= 0; i<size; i++)
+				a[i] = aPerson[i];
+			aPerson = a;
+		}
 	}
-
 }
